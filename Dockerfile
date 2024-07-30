@@ -9,7 +9,7 @@ RUN git clone https://github.com/instaglitch/instaglitch.git && \
     sed -i 's/?.height/?.height || 0/' src/components/modals/Properties.tsx && \
     sed -i 's/?.animated/?.animated || false/' src/components/modals/Properties.tsx
 
-FROM node as build
+FROM node AS build
 
 WORKDIR /instaglitch
 COPY --from=base /git/instaglitch .
